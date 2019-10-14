@@ -10,7 +10,10 @@ import UIKit
 
 class Collection_Dulceria: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
-//    var dulces = ["pizza", "nachos", "palomitas", "paleta", "soda", "chocolate", "panque", "hotdog", "helado", "crepa", "agua", "pastel"]
+    struct MovieKeys {
+        static let keyListaProductos = "keyListaProductos"
+        static let keyPrecioProductos = "keyPrecioProductos"
+    }
     
     var dulces_ : [Dulceria] = [
         Dulceria(dulces: "pizza", costo: 40.00),
@@ -45,8 +48,6 @@ class Collection_Dulceria: UIViewController, UICollectionViewDelegate, UICollect
     
     @IBOutlet weak var totalPrecioProductos: UILabel!
     
-    
-    
     var precioDulce : Double = 0.0
     
     override func viewDidLoad() {
@@ -66,21 +67,6 @@ class Collection_Dulceria: UIViewController, UICollectionViewDelegate, UICollect
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-      /*  let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellIdentifier", for: indexPath as IndexPath)
-//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellIdentifier", for: indexPath)
-      //  nameCandies.text = dulces[indexPath.item]
-//        let imageView = cell.viewWithTag(1) as! UIImageView
-//        imageView.image = UIImage(named:                dulces[indexPath.row])
-          //nombresDulces.text = dulces[indexPath.item]
-//        dulcesFotos.image = UIImage(named:                dulces[indexPath.item])
-//        cell.nombresDulces.text = dulces[indexPath.item]
-        //cell.backgroundColor = UIColor.green
-        cell.layer.borderColor = UIColor.black.cgColor
-        cell.layer.borderWidth = 1
-        cell.layer.cornerRadius = 8
-        
-        return cell */
-        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellIdentifier", for: indexPath as IndexPath)
         
         let imageview : UIImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: cell.frame.size.width, height: cell.frame.size.height))
@@ -96,15 +82,6 @@ class Collection_Dulceria: UIViewController, UICollectionViewDelegate, UICollect
         return cell
     }
     
-//    func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
-//        let cell = collectionView.cellForItem(at: indexPath)
-//        cell?.backgroundColor = UIColor.red
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
-//        let cell = collectionView.cellForItem(at: indexPath)
-//        cell?.backgroundColor = UIColor.green
-//    }
     var  nombreDulce : String = ""
     var  cantidadStepperSender : Int = 0
     
@@ -212,34 +189,17 @@ class Collection_Dulceria: UIViewController, UICollectionViewDelegate, UICollect
         
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.actionSheet)
         
-        alert.addAction(UIAlertAction(title: "Confirmar", style: UIAlertAction.Style.default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Confirmar", style: UIAlertAction.Style.default, handler: {
+            action in
+            
+                let defaults = UserDefaults.standard
+                defaults.set(self.listaProductosCompleta, forKey: MovieKeys.keyListaProductos)
+                defaults.set(self.precioTotal, forKey: MovieKeys.keyPrecioProductos)
+            
+        }))
         alert.addAction(UIAlertAction(title: "Cancelar", style: UIAlertAction.Style.cancel, handler: nil))
         
         self.present(alert, animated: true, completion: nil)
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "dulceriaTicketSegue"{
-            
-            let listaCompleta = segue.destination as!  ViewController_Ticket
-            listaCompleta.ListaProductosCompleta = listaProductosCompleta
-            
-            let precioDulces = segue.destination as!  ViewController_Ticket
-            precioDulces.PrecioTotalDulces = precioTotal
-            
-        }
-    }
-    
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//
-//        collectionView.deselectItem(at: indexPath, animated: true)
-//        showAlert(withTitleAndMessage: "Alert!", message: String(format: "%@ row is selected.",String(indexPath.row)) )
-//    }
-//
-//    func showAlert(withTitleAndMessage title:String, message:String) {
-//        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
-//        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
-//        self.present(alert, animated: true, completion: nil)
-//    }
     
 }

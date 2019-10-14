@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Horarios{
+struct Horarios  {
     
     var hora: String
     var sala: String
@@ -30,7 +30,7 @@ struct Peliculas {
     
 }
 
-struct Dulceria {
+struct Dulceria  {
 
     var dulces: String
     var costo : Double
@@ -41,3 +41,5 @@ struct Dulceria {
     }
 
 }
+
+

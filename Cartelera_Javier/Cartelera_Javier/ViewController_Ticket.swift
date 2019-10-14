@@ -12,49 +12,77 @@ class ViewController_Ticket: UIViewController {
 
     @IBOutlet weak var ticketLbl: UILabel!
     
-    var TotalDeTodo : Double = 0.0
+    var totalDeTodo : Double = 0.0
     
-    var CostoBoletosNino : Double = 40.0
-    var CostoBoletosAdulto : Double = 60.0
-    var CostoTotalBoletos : Double = 0.0
-    var LugaresTotal : Int = 48
-    var LugaresRestantes : Int = 0
+    var costoBoletosNino : Int = 40
+    var costoBoletosAdulto : Int = 60
+    var costoTotalBoletos : Int = 0
     
-    var Titulo : String!
-    var Sala : String!
-    var Hora : String!
+    var lugaresTotal : Int = 48
+    var lugaresRestantes : Int = 0
     
-    var Ninos : Double!
-    var Adultos : Double!
+    var totalNinos : Int = 0
+    var totaladultos : Int = 0
+    var totalAdultosNinos : Int = 0
+    var precioP : Int = 0
     
-    var TotalNinos : Double!
-    var Totaladultos : Double!
-    var TotalAdultosNinos : Double!
+    var mensajeTicket : String = "Muchas Gracias Por Su Preferencia!\n\n"
     
-    var ListaProductosCompleta : String!
-    var PrecioTotalDulces : Double!
-    
-    var numeracionButtonCounter : [Int]!
+    struct MovieKeys {
+        static let keyTitulo = "keyTitulo"
+        static let keySala = "keySala"
+        static let keyHora = "keyHora"
+        static let keyNinos = "keyNinos"
+        static let keyAdultos = "keyAdultos"
+        static let keyListaProductos = "keyListaProductos"
+        static let keyPrecioProductos = "keyPrecioProductos"
+        static let keyNumeracion = "keyNumeracion"
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //TotalDeTodo = TotalAdultosNinos + PrecioTotalDulces
+        let defaults = UserDefaults.standard
+        if let titulo = defaults.string(forKey: MovieKeys.keyTitulo){
+            mensajeTicket = mensajeTicket + "El Titulo de su pelicula es: \(titulo),\n"
+        }
+        if let sala = defaults.string(forKey: MovieKeys.keySala){
+            mensajeTicket = mensajeTicket + "En la \(sala),\n"
+        }
+        if let hora = defaults.string(forKey: MovieKeys.keyHora){
+            mensajeTicket = mensajeTicket + "A las \(hora) horas.\n"
+        }
+        if let ninos = defaults.string(forKey: MovieKeys.keyNinos){
+            mensajeTicket = mensajeTicket + "\nUsted selecciono \(ninos) asientos de niño y "
+            totalNinos = Int(ninos)! * costoBoletosNino
+        }
+        if let adultos = defaults.string(forKey: MovieKeys.keyAdultos)  {
+            mensajeTicket = mensajeTicket + "\(adultos) asientos de adulto.\n"
+            totaladultos = Int(adultos)! * costoBoletosAdulto
+        }
+            totalAdultosNinos = totaladultos + totalNinos
         
-//        ticketLbl.text = "Muchas Gracias por Realizar Su Compra Con Nosotros.\nUsted ha adquirido \(Int(Ninos)) boletos de niños por $\(String(describing: TotalNinos)), y \(Int(Adultos)) boletos de adultos por $\(String(describing: Totaladultos)).\nLa numeracion de sus asientos es la siguiente: \(String(describing: numeracionButtonCounter)).\nPrecio total: $\(String(describing: TotalAdultosNinos)).\n\nHa hecho la siguiente adquisicion de productos es nuestra dulceria: \(String(describing: ListaProductosCompleta)) por un precio total de \(String(describing: PrecioTotalDulces)).\n\nEl costo final de su compra de boletos y productos es: $\(TotalDeTodo).\nDe Nuevo Muchas Gracias Por Su Compra!"
+        if(totalAdultosNinos > 0){
+            mensajeTicket = mensajeTicket + "El costo de sus boletos es de: $ \(totalAdultosNinos)\n"
+        }
         
-        ticketLbl.text = "Muchas Gracias Por Su Compra.\nSu pelicula es:\(Titulo)"
+        if let listaProductos = defaults.string(forKey: MovieKeys.keyListaProductos)  {
+            mensajeTicket = mensajeTicket + "\nEn nuestra dulceria usted adquirio:\n\(listaProductos) "
+        }
+        if let precioProductos = defaults.string(forKey: MovieKeys.keyPrecioProductos)  {
+            mensajeTicket = mensajeTicket + "\nPor un total de $\(precioProductos).\n"
+            //precioP = Int(precioProductos)!
+            totalDeTodo = Double(precioProductos)! + Double(totalAdultosNinos)
+        }
+        
+        if(totalDeTodo > 0){
+            mensajeTicket = mensajeTicket + "\nEl costo total de su compra es de: $ \(totalDeTodo)\n"
+        }
+        
+        if let numeracion = defaults.array(forKey:  MovieKeys.keyNumeracion){
+            mensajeTicket = mensajeTicket + "\nLa numeracion de sus asientos en la sala\nes la siguiente:\n\n\(numeracion)"
+        }
+        ticketLbl.text = mensajeTicket
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

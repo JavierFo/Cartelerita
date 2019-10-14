@@ -20,6 +20,15 @@ class Collection_Asientos: UIViewController, UICollectionViewDelegate, UICollect
     var Sala : String!
     var Hora : String!
     
+    struct MovieKeys {
+        static let keyTitulo = "keyTitulo"
+        static let keySala = "keySala"
+        static let keyHora = "keyHora"
+        static let keyNinos = "keyNinos"
+        static let keyAdultos = "keyAdultos"
+        static let keyNumeracion = "keyNumeracion"
+    }
+    
     @IBOutlet weak var collectionAsientos: UICollectionView!
     
     @IBOutlet weak var navbar2: UINavigationItem!
@@ -86,51 +95,25 @@ class Collection_Asientos: UIViewController, UICollectionViewDelegate, UICollect
         
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "asientosTicketSegue"{
-            
-            let titulo_ = segue.destination as! ViewController_Ticket
-            titulo_.Titulo = titulo
-            
-            let sala_ = segue.destination as! ViewController_Ticket
-            sala_.Sala = Sala
-            
-            let hora_ = segue.destination as! ViewController_Ticket
-            hora_.Hora = Hora
-            
-            let ninos_ = segue.destination as! ViewController_Ticket
-            ninos_.Ninos = Ninos
-            
-            let adultos_ = segue.destination as! ViewController_Ticket
-            adultos_.Adultos = Adultos
-            
-            let totalninos_ = segue.destination as! ViewController_Ticket
-            totalninos_.TotalNinos = totalNinos
-            
-            let totaladultos_ = segue.destination as! ViewController_Ticket
-            totaladultos_.Adultos = totaladultos
-            
-            let totaladultosninos_ = segue.destination as! ViewController_Ticket
-            totaladultosninos_.TotalAdultosNinos = totalAdultosNinos
-            
-            let numeracion = segue.destination as! ViewController_Ticket
-            numeracion.numeracionButtonCounter = buttonCounter
-            
-        }
-    }
-    
-    //    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    //
-    //        collectionView.deselectItem(at: indexPath, animated: true)
-    //        showAlert(withTitleAndMessage: "Alert!", message: String(format: "%@ row is selected.",String(indexPath.row)) )
-    //    }
-
         func showAlert(withTitleAndMessage title:String, message:String) {
             
             let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.actionSheet)
             
-            alert.addAction(UIAlertAction(title: "Confirmar", style: UIAlertAction.Style.default, handler: nil))
-            alert.addAction(UIAlertAction(title: "Cancelar", style: UIAlertAction.Style.cancel, handler: nil))
+            alert.addAction(UIAlertAction(title: "Confirmar", style: UIAlertAction.Style.default, handler: {
+                action in
+        
+                let defaults = UserDefaults.standard
+                    defaults.set(self.titulo, forKey: MovieKeys.keyTitulo)
+                    defaults.set(self.Sala, forKey: MovieKeys.keySala)
+                    defaults.set(self.Hora, forKey: MovieKeys.keyHora)
+                    defaults.set(self.Ninos, forKey: MovieKeys.keyNinos)
+                    defaults.set(self.Adultos, forKey: MovieKeys.keyAdultos)
+                    defaults.set(self.buttonCounter, forKey: MovieKeys.keyNumeracion)
+                
+            } ))
+            alert.addAction(UIAlertAction(title: "Cancelar", style: UIAlertAction.Style.cancel, handler: {
+                action in print ("Bye")
+            }))
             
             self.present(alert, animated: true, completion: nil)
         }

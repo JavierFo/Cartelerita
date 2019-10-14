@@ -133,9 +133,6 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
             let numeroadultos = segue.destination as! TableViewController_Peliculas
             numeroadultos.numeroAdultos = numeroAdultos
         }
-        
-        
-        
     }
 }
 
