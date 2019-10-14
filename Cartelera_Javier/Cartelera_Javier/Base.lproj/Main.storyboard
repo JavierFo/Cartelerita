@@ -86,7 +86,7 @@
                                 </connections>
                             </stepper>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KV0-Mu-olP">
-                                <rect key="frame" x="133" y="635" width="147" height="73"/>
+                                <rect key="frame" x="28" y="635" width="147" height="73"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
@@ -101,6 +101,25 @@
                                 <connections>
                                     <action selector="horariosBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xpf-0Z-Wc0"/>
                                     <segue destination="WBQ-wW-VQQ" kind="show" identifier="horarioSegue" id="3ld-tz-tpa"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="diQ-bU-EK0">
+                                <rect key="frame" x="252" y="640" width="124" height="63"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Dulceria">
+                                            <attributes>
+                                                <font key="NSFont" size="22" name="MarkerFelt-Thin"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <connections>
+                                    <segue destination="I6d-HN-hxB" kind="popoverPresentation" popoverAnchorView="diQ-bU-EK0" id="QSA-G7-HMe">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
                                 </connections>
                             </button>
                         </subviews>
@@ -162,7 +181,7 @@
                                         <barButtonItem key="backBarButtonItem" title="Cartelera" id="Sei-2Y-Mzk"/>
                                         <barButtonItem key="leftBarButtonItem" title="Cartelera" id="Gq5-wS-O2X">
                                             <connections>
-                                                <segue destination="d0i-OD-DKL" kind="unwind" unwindAction="unwindToDulceriaWithUnwindSegue:" id="0zb-Hh-OJq"/>
+                                                <segue destination="d0i-OD-DKL" kind="unwind" unwindAction="unwindToDulceriaWithUnwindSegue:" id="9D8-ji-grG"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Ver Ticket" id="06q-14-klD">
@@ -591,6 +610,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Ver Cartelera"/>
                                 <connections>
+                                    <action selector="resetData:" destination="CJ7-60-FC1" eventType="touchUpInside" id="C3Q-Qp-QEE"/>
                                     <segue destination="MCT-R4-hjB" kind="unwind" unwindAction="unwindToticket:" id="V4b-P0-m5V"/>
                                 </connections>
                             </button>
@@ -629,5 +649,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="1qd-cS-BnG"/>
         <segue reference="3ld-tz-tpa"/>
+        <segue reference="QSA-G7-HMe"/>
     </inferredMetricsTieBreakers>
 </document>

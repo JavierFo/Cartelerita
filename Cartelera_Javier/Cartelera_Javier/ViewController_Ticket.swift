@@ -84,5 +84,20 @@ class ViewController_Ticket: UIViewController {
         }
         ticketLbl.text = mensajeTicket
     }
+    
+    @IBAction func resetData(_ sender: UIButton) {
+        
+        let defaults = UserDefaults.standard
+        
+        defaults.removeObject(forKey: MovieKeys.keyTitulo)
+        defaults.removeObject(forKey: MovieKeys.keySala)
+        defaults.removeObject(forKey: MovieKeys.keyHora)
+        defaults.removeObject(forKey: MovieKeys.keyNinos)
+        defaults.removeObject(forKey: MovieKeys.keyAdultos)
+        defaults.removeObject(forKey: MovieKeys.keyNumeracion)
+        defaults.removeObject(forKey: MovieKeys.keyListaProductos)
+        defaults.removeObject(forKey: MovieKeys.keyPrecioProductos)
+    }
+    
 
 }
