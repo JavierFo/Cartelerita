@@ -7,30 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		10336E3F2350416500FF785A /* Collection_Dulceria.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10336E3E2350416500FF785A /* Collection_Dulceria.swift */; };
-		10336E412350650900FF785A /* Collection_Asientos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10336E402350650900FF785A /* Collection_Asientos.swift */; };
+		10336E3F2350416500FF785A /* DulceriaCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10336E3E2350416500FF785A /* DulceriaCollectionViewController.swift */; };
+		10336E412350650900FF785A /* AsientosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10336E402350650900FF785A /* AsientosCollectionViewController.swift */; };
 		10934A1C234C3A240013B5BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10934A1B234C3A240013B5BA /* AppDelegate.swift */; };
-		10934A1E234C3A240013B5BA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10934A1D234C3A240013B5BA /* ViewController.swift */; };
+		10934A1E234C3A240013B5BA /* CarteleraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10934A1D234C3A240013B5BA /* CarteleraViewController.swift */; };
 		10934A21234C3A240013B5BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10934A1F234C3A240013B5BA /* Main.storyboard */; };
 		10934A23234C3A260013B5BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10934A22234C3A260013B5BA /* Assets.xcassets */; };
 		10934A26234C3A260013B5BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10934A24234C3A260013B5BA /* LaunchScreen.storyboard */; };
-		10B9276A234E99C600D136A5 /* TableViewController_Peliculas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B92769234E99C600D136A5 /* TableViewController_Peliculas.swift */; };
-		10F11A7A2352D87D005EF197 /* ViewController_Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F11A792352D87D005EF197 /* ViewController_Ticket.swift */; };
+		10B9276A234E99C600D136A5 /* PeliculasTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B92769234E99C600D136A5 /* PeliculasTableViewController.swift */; };
+		10F11A7A2352D87D005EF197 /* TicketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F11A792352D87D005EF197 /* TicketViewController.swift */; };
 		10F183AC234F006100B1E3FF /* Horarios.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F183AB234F006100B1E3FF /* Horarios.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		10336E3E2350416500FF785A /* Collection_Dulceria.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collection_Dulceria.swift; sourceTree = "<group>"; };
-		10336E402350650900FF785A /* Collection_Asientos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collection_Asientos.swift; sourceTree = "<group>"; };
+		10336E3E2350416500FF785A /* DulceriaCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DulceriaCollectionViewController.swift; sourceTree = "<group>"; };
+		10336E402350650900FF785A /* AsientosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsientosCollectionViewController.swift; sourceTree = "<group>"; };
 		10934A18234C3A240013B5BA /* Cartelera_Javier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cartelera_Javier.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10934A1B234C3A240013B5BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		10934A1D234C3A240013B5BA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		10934A1D234C3A240013B5BA /* CarteleraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarteleraViewController.swift; sourceTree = "<group>"; };
 		10934A20234C3A240013B5BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		10934A22234C3A260013B5BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		10934A25234C3A260013B5BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		10934A27234C3A260013B5BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		10B92769234E99C600D136A5 /* TableViewController_Peliculas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController_Peliculas.swift; sourceTree = "<group>"; };
-		10F11A792352D87D005EF197 /* ViewController_Ticket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController_Ticket.swift; sourceTree = "<group>"; };
+		10B92769234E99C600D136A5 /* PeliculasTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeliculasTableViewController.swift; sourceTree = "<group>"; };
+		10F11A792352D87D005EF197 /* TicketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketViewController.swift; sourceTree = "<group>"; };
 		10F183AB234F006100B1E3FF /* Horarios.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Horarios.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -45,6 +45,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		106F4670241CC5A300E0C68F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				10F183AB234F006100B1E3FF /* Horarios.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		106F4671241CC65F00E0C68F /* VControllers */ = {
+			isa = PBXGroup;
+			children = (
+				10934A1D234C3A240013B5BA /* CarteleraViewController.swift */,
+				10B92769234E99C600D136A5 /* PeliculasTableViewController.swift */,
+				10336E402350650900FF785A /* AsientosCollectionViewController.swift */,
+				10336E3E2350416500FF785A /* DulceriaCollectionViewController.swift */,
+				10F11A792352D87D005EF197 /* TicketViewController.swift */,
+			);
+			path = VControllers;
+			sourceTree = "<group>";
+		};
 		10934A0F234C3A240013B5BA = {
 			isa = PBXGroup;
 			children = (
@@ -64,17 +84,13 @@
 		10934A1A234C3A240013B5BA /* Cartelera_Javier */ = {
 			isa = PBXGroup;
 			children = (
+				106F4671241CC65F00E0C68F /* VControllers */,
+				106F4670241CC5A300E0C68F /* Model */,
 				10934A1B234C3A240013B5BA /* AppDelegate.swift */,
 				10934A1F234C3A240013B5BA /* Main.storyboard */,
 				10934A22234C3A260013B5BA /* Assets.xcassets */,
 				10934A24234C3A260013B5BA /* LaunchScreen.storyboard */,
 				10934A27234C3A260013B5BA /* Info.plist */,
-				10F183AB234F006100B1E3FF /* Horarios.swift */,
-				10934A1D234C3A240013B5BA /* ViewController.swift */,
-				10B92769234E99C600D136A5 /* TableViewController_Peliculas.swift */,
-				10336E402350650900FF785A /* Collection_Asientos.swift */,
-				10336E3E2350416500FF785A /* Collection_Dulceria.swift */,
-				10F11A792352D87D005EF197 /* ViewController_Ticket.swift */,
 			);
 			path = Cartelera_Javier;
 			sourceTree = "<group>";
@@ -151,11 +167,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				10F183AC234F006100B1E3FF /* Horarios.swift in Sources */,
-				10F11A7A2352D87D005EF197 /* ViewController_Ticket.swift in Sources */,
-				10934A1E234C3A240013B5BA /* ViewController.swift in Sources */,
-				10B9276A234E99C600D136A5 /* TableViewController_Peliculas.swift in Sources */,
-				10336E412350650900FF785A /* Collection_Asientos.swift in Sources */,
-				10336E3F2350416500FF785A /* Collection_Dulceria.swift in Sources */,
+				10F11A7A2352D87D005EF197 /* TicketViewController.swift in Sources */,
+				10934A1E234C3A240013B5BA /* CarteleraViewController.swift in Sources */,
+				10B9276A234E99C600D136A5 /* PeliculasTableViewController.swift in Sources */,
+				10336E412350650900FF785A /* AsientosCollectionViewController.swift in Sources */,
+				10336E3F2350416500FF785A /* DulceriaCollectionViewController.swift in Sources */,
 				10934A1C234C3A240013B5BA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
